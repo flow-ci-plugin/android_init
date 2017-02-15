@@ -1,0 +1,29 @@
+
+name: android_init
+version: 0.0.1
+language: android
+description: Android environment initialize
+public: true
+tags:
+  - android
+  - init
+inputs:
+  - name: FLOW_VERSION
+    editable: false
+  - name: FLOW_PROJECT_ANDROID_SDK
+    editable: true
+    default: android-19
+  - name: FLOW_PROJECT_NAME
+    editable: true
+  - name: FLOW_PROJECT_ANDROID_CPU
+    editable: true
+    default: armeabi-v7a
+outputs:
+  - name: FLOW_JAVA_VERSION
+  - name: FLOW_ANDROID_SDK_VERSION
+  - name: FLOW_ANDROID_CPU_VERSION
+script_path: ./run.sh  
+  
+template: |  
+  
+  
