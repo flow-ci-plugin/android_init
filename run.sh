@@ -32,3 +32,14 @@ flow_cmd "chjava $FLOW_VERSION" --echo
 
 flow_cmd "java -Xmx32m -version" --echo
 flow_cmd "javac -J-Xmx32m -version" --echo
+
+export ANDROID_NDK_HOME=/usr/ndk/android-ndk-r11b
+export PATH=${PATH}:${NDK}
+
+## Init gradle env
+mkdir -pv ~/.gradle && touch ~/.gradle/gradle.properties && echo "org.gradle.parallel=true
+org.gradle.jvmargs=-Xmx5g -Xms5g
+systemProp.http.proxyHost=proxy.flow.ci
+systemProp.http.proxyPort=8123
+systemProp.https.proxyHost=proxy.flow.ci
+systemProp.https.proxyPort=8123" >> ~/.gradle/gradle.properties
